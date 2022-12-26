@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Arrays of Objects Handson</h1>
+    <h2>
+      "let studentRecords = [ {name: 'John', id: 123, marks : 98 }, {name:
+      'Baba', id: 101, marks : 23 }, {name: 'yaga', id: 200, marks : 45 },
+      {name: 'Wick', id: 115, marks : 75 } ] "
+    </h2>
+    <h2>
+      1."We are interested in retrieving only the students' names; all the names
+      should be in caps. ['JOHN', 'BABA', 'YAGA', 'WICK']"
+    </h2>
+    <pre style="color: blue; font-size: 20px">
+function retrievingNames(){
+    let studentRecords = [ {name: 'John', id: 123, marks : 98 }, 
+    {name:'Baba', id: 101, marks : 23 },
+    {name: 'yaga', id: 200, marks : 45 },
+    {name: 'Wick', id: 115, marks : 75 } ]
+    let res=[];
+    for(let i=0;i&ltstudentRecords.length;i++){
+        let obj=studentRecords[i];
+        res.push(obj.name.toLocaleUpperCase());
+    }
+    console.log(res);
+}
+retrievingNames();</pre
+    >
+    <h2>
+      2."Suppose we have the same dataset as above but this time we want to get
+      the details of students who scored more than 50 marks. [{name: 'John', id:
+      123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"
+    </h2>
+    <pre style="color: blue; font-size: 20px">
+function scoreMoreThan50(){
+     let studentRecords = [ {name: 'John', id: 123, marks : 98 }, 
+    {name:'Baba', id: 101, marks : 23 },
+    {name: 'yaga', id: 200, marks : 45 },
+    {name: 'Wick', id: 115, marks : 75 } ]
+    let result=[];
+    for(let i=0;i&ltstudentRecords.length;i++){
+         let obj=studentRecords[i];
+        if(obj.marks>50){
+        result.push(obj.marks);
+        }
+    }
+    console.log(result);
+}
+scoreMoreThan50();</pre
+    >
+    <h2>
+      3.Retrieve the details of students who scored more than 50 marks and have
+      IDs greater than 120.
+    </h2>
+    <pre style="color: blue; font-size: 20px">
+function scoreAndIdMoreThan50(){
+     let studentRecords = [ {name: 'John', id: 123, marks : 98 }, 
+    {name:'Baba', id: 101, marks : 23 },
+    {name: 'yaga', id: 200, marks : 45 },
+    {name: 'Wick', id: 115, marks : 75 } ]
+    let result=[];
+    let resultId=[];
+    for(let i=0;i&ltstudentRecords.length;i++){
+         let obj=studentRecords[i];
+        if(obj.marks>50 && obj.id>120){
+        result.push(obj.marks);
+        resultId.push(obj.id);
+        }
+    }
+    console.log(result);
+    console.log(resultId);
+}
+scoreAndIdMoreThan50();</pre
+    >
+    <h2>
+      4.Consider the same scenario we have discussed above, but this time we
+      would like to know the sum total of the marks of the students.
+    </h2>
+    <pre style="color: blue; font-size: 20px">
+function totalMarksOfStudents(){
+    let studentRecords = [ {name: 'John', id: 123, marks : 98 }, 
+    {name:'Baba', id: 101, marks : 23 },
+    {name:'yaga', id: 200, marks : 45 },
+    {name:'Wick', id: 115, marks : 75 } ]
+    let res=[];
+    let sum=0;
+    for(let i=0;i&ltstudentRecords.length;i++){
+        sum+=studentRecords[i].marks;
+    }
+    console.log(sum);
+}
+totalMarksOfStudents();</pre
+    >
+    <h2>
+      5.This time we want to get only the names of the students who scored more
+      than 50 marks from the same dataset used above.
+    </h2>
+    <pre style="color: blue; font-size: 20px">
+function namesScoreMoreThan50(){
+     let studentRecords = [ {name: 'John', id: 123, marks : 98 }, 
+    {name:'Baba', id: 101, marks : 23 },
+    {name: 'yaga', id: 200, marks : 45 },
+    {name: 'Wick', id: 115, marks : 75 } ]
+    let result=[];
+    for(let i=0;i&ltstudentRecords.length;i++){
+         let obj=studentRecords[i];
+        if(obj.marks>50){
+        result.push(obj.name);
+        }
+    }
+    console.log(result);
+
+}
+namesScoreMoreThan50();</pre
+    >
+    <h2>
+      6.This time we are required to print the sum of marks of the students with
+      id > 120.
+    </h2>
+    <pre style="color: blue; font-size: 20px">
+function sumMarksIdGreaterThan120(){
+     let studentRecords = [ {name: 'John', id: 123, marks : 98 }, 
+    {name:'Baba', id: 101, marks : 23 },
+    {name: 'yaga', id: 200, marks : 45 },
+    {name: 'Wick', id: 115, marks : 75 } ]
+    let result=[];
+    let sum=0;
+    for(let i=0;i&ltstudentRecords.length;i++){
+        let obj=studentRecords[i];
+        if(obj.id>120){
+            sum+=obj.marks;
+        }
+    }
+    console.log(sum);
+}
+sumMarksIdGreaterThan120();</pre
+    >
+    <h2>
+      7.This time we are required to print the total marks of the students with
+      marks greater than 50 after a grace of 15 marks has been added to those
+      students who scored less than 50.
+    </h2>
+    <pre style="color: blue; font-size: 20px">
+function totalMarksGreaterThan_50_AfterAdding15(){
+    let studentRecords = [ {name: 'John', id: 123, marks : 98 }, 
+    {name:'Baba', id: 101, marks : 23 },
+    {name: 'yaga', id: 200, marks : 45 },
+    {name: 'Wick', id: 115, marks : 75 } ]
+    let sum=0;
+    for(let i=0;i&ltstudentRecords.length;i++){
+        let obj=studentRecords[i];
+        if(obj.marks&lt50){
+            obj.marks=obj.marks+15;
+            if(obj.marks>50){
+            sum+=obj.marks;
+        }  
+        }
+    }
+    console.log(sum);
+}
+totalMarksGreaterThan_50_AfterAdding15();</pre
+    >
+
+    <script src="script.js"></script>
+  </body>
+</html>
